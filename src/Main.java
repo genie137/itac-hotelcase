@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws Exception {
         Hotel h = new Hotel(Hotel.getStartRooms());
-//        System.out.println(h.getRooms());
+        System.out.println(h.getRooms());
 
         ArrayList<Guest> guests1 = new ArrayList<>();
         guests1.add(new Guest("Joris", "Oosterhuis", "0677895469", "joris@home.com"));
@@ -18,6 +18,7 @@ public class Main {
 
         Booking b1 = new Booking(h, LocalDateTime.now(), LocalDateTime.of(2020, Month.OCTOBER, 3, 12, 0), guests1);
         h.addBooking(b1);
+        System.out.println(b1);
 
         ArrayList<Guest> guests2 = new ArrayList<>();
         guests2.add(new Guest("Joris1", "Oosterhuis", "0677895469", "joris@home.com"));
