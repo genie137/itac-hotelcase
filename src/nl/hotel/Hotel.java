@@ -6,16 +6,15 @@ import java.util.Optional;
 
 public class Hotel {
     ArrayList<Room> rooms;
-    ArrayList<Booking> roomBookings;
+    ArrayList<Booking> bookings;
 
     public Hotel(ArrayList<Room> rooms) {
         this.rooms = rooms;
-        this.roomBookings = new ArrayList<>();
+        this.bookings = new ArrayList<>();
     }
 
-    public boolean addBooking(Booking roomBooking){
-        //todo
-        return false;
+    public boolean addBooking(Booking booking){
+        return this.bookings.add(booking);
     }
 
     public Room getAvailableRooms(LocalDateTime startTime, LocalDateTime endTime){

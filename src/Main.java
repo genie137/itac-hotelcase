@@ -14,6 +14,7 @@ public class Main {
         guests1.add(new Guest("Erwin", "Nijboer", "0614564689", "erwin@home.com"));
 
         Booking b = new Booking(h, null, null, guests1);
+        h.addBooking(b);
 
     }
 }
