@@ -2,6 +2,7 @@ package nl.hotel;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Hotel {
     ArrayList<Room> rooms;
@@ -17,9 +18,19 @@ public class Hotel {
         return false;
     }
 
-    public ArrayList<Room> getAvailableRooms(LocalDateTime startTime, LocalDateTime endTime){
+    public Room getAvailableRooms(LocalDateTime startTime, LocalDateTime endTime){
         //todo find room within date range that is not occupied
-        return null;
+        ROOM_LOOP: for (Room room : getRooms()) {
+            for (Booking booking : roomBookings) {
+                // check if new booking ends before old booking starts ||
+                // if new booking starts after old booking ends
+                if (booking.startTime.compareTo(endTime) > 0 || booking.endTime.compareTo(startTime) < 0) {
+                    continue ROOM_LOOP;
+                }
+            }
+            return room;
+        }
+        return Optional.empty();
     }
 
     public ArrayList<Room> getRooms() {
