@@ -44,4 +44,14 @@ public class Guest {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Guest{" +
+                "voornaam='" + voornaam + '\'' +
+                ", achternaam='" + achternaam + '\'' +
+                ", telefoonnummer=" + telefoonnummer +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
