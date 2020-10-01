@@ -17,10 +17,10 @@ public class Hotel {
         return this.bookings.add(booking);
     }
 
-    public Room getAvailableRooms(LocalDateTime startTime, LocalDateTime endTime){
+    public Room getAvailableRoom(LocalDateTime startTime, LocalDateTime endTime){
         //todo find room within date range that is not occupied
         ROOM_LOOP: for (Room room : getRooms()) {
-            for (Booking booking : roomBookings) {
+            for (Booking booking : bookings) {
                 // check if new booking ends before old booking starts ||
                 // if new booking starts after old booking ends
                 if (booking.startTime.compareTo(endTime) > 0 || booking.endTime.compareTo(startTime) < 0) {
@@ -29,7 +29,7 @@ public class Hotel {
             }
             return room;
         }
-        return Optional.empty();
+        return null;
     }
 
     public ArrayList<Room> getRooms() {

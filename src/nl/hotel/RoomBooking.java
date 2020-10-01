@@ -18,4 +18,12 @@ public class RoomBooking {
     public Room getRoom() {
         return room;
     }
+
+    @Override
+    public String toString() {
+        return "RoomBooking{" +
+                "room=" + room +
+                ", guests=" + guests +
+                '}';
+    }
 }
