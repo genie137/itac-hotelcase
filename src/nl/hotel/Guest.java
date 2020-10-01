@@ -3,10 +3,10 @@ package nl.hotel;
 public class Guest {
     private String voornaam;
     private String achternaam;
-    private int telefoonnummer;
+    private String telefoonnummer;
     private String email;
 
-    public Guest(String voornaam, String achternaam, int telefoonnummer, String email) {
+    public Guest(String voornaam, String achternaam, String telefoonnummer, String email) {
         this.voornaam = voornaam;
         this.achternaam = achternaam;
         this.telefoonnummer = telefoonnummer;
@@ -29,11 +29,11 @@ public class Guest {
         this.achternaam = achternaam;
     }
 
-    public int getTelefoonnummer() {
+    public String getTelefoonnummer() {
         return telefoonnummer;
     }
 
-    public void setTelefoonnummer(int telefoonnummer) {
+    public void setTelefoonnummer(String telefoonnummer) {
         this.telefoonnummer = telefoonnummer;
     }
 

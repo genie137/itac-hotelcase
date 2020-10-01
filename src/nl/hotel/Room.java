@@ -1,8 +1,20 @@
 package nl.hotel;
 
 public class Room {
+    public static int nextRoomNumber = 1;
     private int roomNumber;
     private int maxGuests;
+
+//    public Room(int roomNumber, int maxGuests) {
+//        this.roomNumber = roomNumber;
+//        this.maxGuests = maxGuests;
+//    }
+
+    public Room(int maxGuests) {
+        this.roomNumber = nextRoomNumber;
+        this.maxGuests = maxGuests;
+        nextRoomNumber++;
+    }
 
     public int getRoomNumber() {
         return roomNumber;
@@ -20,8 +32,11 @@ public class Room {
         this.maxGuests = maxGuests;
     }
 
-    public Room(int roomNumber, int maxGuests) {
-        this.roomNumber = roomNumber;
-        this.maxGuests = maxGuests;
+    @Override
+    public String toString() {
+        return "Room{" +
+                "roomNumber=" + roomNumber +
+                ", maxGuests=" + maxGuests +
+                '}';
     }
 }
